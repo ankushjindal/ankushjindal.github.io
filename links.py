@@ -2,7 +2,7 @@ import requests
 from lxml.html import fromstring
 import sys
 from time import gmtime, strftime
-from subprocess import call
+import os
 
 try:
   link = sys.argv[1]
@@ -27,8 +27,8 @@ try:
       if deploy=="-d":
         print("deploying")
         commitstr = "Added link " + link
-        call(["git","add","index.html"])
-        call(["git","commit","-a","-m",commitstr])
+        os.system("git add index.html")
+        os.system("git commit -m "+commitstr)
         try:
           passfile = open("pass.txt","r")
           passdata = passfile.read().split()
@@ -37,7 +37,7 @@ try:
           print("getting pass")
           pushstr = "https://"+str(username)+":"+str(password)+"@github.com/ankushjindal/ankushjindal.github.io.git"
           print("pushing")
-          call(["git","push","-u",pushstr,"master"])
+          os.system("git push -u "+pushstr+" master")
         except:
           print("Pass error")
     except:
