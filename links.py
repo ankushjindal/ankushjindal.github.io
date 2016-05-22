@@ -27,6 +27,7 @@ try:
       if deploy=="-d":
         print("deploying")
         commitstr = "Added link " + link
+        call(["git","add","index.html"])
         call(["git","commit","-a","-m",commitstr])
         try:
           passfile = open("pass.txt","r")
