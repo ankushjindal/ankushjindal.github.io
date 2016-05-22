@@ -11,7 +11,7 @@ try:
   title = tree.findtext('.//title')
   if not title:
       title = link
-  timestr = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+  timestr = strftime("%Y-%m-%d", gmtime())
   print("Link fetched")
   try:
     file = open("index.html","r+")
