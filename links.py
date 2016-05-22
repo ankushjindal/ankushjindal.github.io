@@ -19,6 +19,7 @@ try:
     new = "<br><i>" + timestr + "</i><a href='" + link + "'>" + title + "</a>\n"
     print(new)
     file.write(new)
+    file.close()
     try:
       try:
         deploy = sys.argv[2]
@@ -36,6 +37,7 @@ try:
           passdata = passfile.read().split()
           username = passdata[0]
           password = passdata[1]
+          passfile.close()
           print("getting pass")
           pushstr = "https://"+str(username)+":"+str(password)+"@github.com/ankushjindal/ankushjindal.github.io.git"
           print("pushing")
