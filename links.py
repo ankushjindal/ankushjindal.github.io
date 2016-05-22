@@ -26,7 +26,7 @@ try:
         deploy = False
       if deploy=="-d":
         print("deploying")
-        commitstr = "Added link " + link
+        commitstr = "'Added link " + str(link)+"'"
         os.system("git add index.html")
         os.system("git commit -m "+commitstr)
         try:
