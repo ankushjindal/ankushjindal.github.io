@@ -26,10 +26,10 @@ try:
         deploy = False
       if deploy=="-d":
         print("deploying")
-        os.system("git add index.html")
-        print("added")
+        # os.system("git add index.html")
+        # print("added")
         commitstr = "'Added link " + str(link)+"'"
-        os.system("git commit -m "+commitstr)
+        os.system("git commit -a -m "+commitstr)
         print("commenting"+commitstr)
         try:
           passfile = open("pass.txt","r")
