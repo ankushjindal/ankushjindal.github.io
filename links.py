@@ -12,10 +12,12 @@ try:
   if not title:
       title = link
   timestr = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+  print("Link fetched")
   try:
     file = open("index.html","r+")
     data = file.read()
     new = "<br><i>" + timestr + "</i><a href='" + link + "'>" + title + "</a>\n"
+    print(new)
     file.write(new)
     try:
       try:
@@ -23,15 +25,17 @@ try:
       except:
         deploy = False
       if deploy=="-d":
+        print("deploying")
         commitstr = "Added link "+link
-        call(["git","add","*"])
-        call(["git","commit","-m",commitstr])
+        call(["git","commit","-a","-m",commitstr])
         try:
           passfile = open("pass.txt","r")
           passdata = passfile.read().split()
           username = passdata[0]
           password = passdata[1]
+          print("getting pass")
           pushstr = "https://"+str(username)+":"+str(password)+"@github.com/ankushjindal/ankushjindal.github.io.git"
+          print("pushing")
           call(["git","push","-u",pushstr,"master"])
         except:
           print("Pass error")
