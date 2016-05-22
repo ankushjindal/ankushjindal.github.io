@@ -16,7 +16,7 @@ try:
   try:
     file = open("index.html","r+")
     data = file.read()
-    new = "<br><i>" + timestr + "</i><a href='" + link + "'>" + title + "</a>\n"
+    new = "<br><i>" + timestr + "</i> <a href='" + link + "'>" + title + "</a>\n"
     print(new)
     file.write(new)
     file.close()
