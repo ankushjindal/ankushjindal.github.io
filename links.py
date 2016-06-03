@@ -45,22 +45,22 @@ if not arguments.dry:
     print("File error")
     sys.exit(0)
 
-  try:
-    if deploy:
-      commitstr = "'Added link " + str(link)+"'"
-      os.system("git commit -a -m "+commitstr)
-      print("deploying "+commitstr)
-      passfile = open("pass.txt","r")
-      passdata = passfile.read().split()
-      username = passdata[0]
-      password = passdata[1]
-      passfile.close()
-      print("getting pass")
-      pushstr = "https://"+str(username)+":"+str(password)+"@github.com/ankushjindal/ankushjindal.github.io.git"
-      print("pushing")
-      os.system("git push -u "+pushstr+" master")
-  except:
-    print("Git/Pass error")
-    sys.exit(0)
+  # try:
+  if arguments.deploy:
+    commitstr = "'Added link " + str(link)+"'"
+    os.system("git commit -a -m "+commitstr)
+    print("deploying "+commitstr)
+    passfile = open("pass.txt","r")
+    passdata = passfile.read().split()
+    username = passdata[0]
+    password = passdata[1]
+    passfile.close()
+    print("getting pass")
+    pushstr = "https://"+str(username)+":"+str(password)+"@github.com/ankushjindal/ankushjindal.github.io.git"
+    print("pushing")
+    os.system("git push -u "+pushstr+" master")
+  # except:
+  #   print("Git/Pass error")
+  #   sys.exit(0)
 else:
   print(new)
