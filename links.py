@@ -13,6 +13,7 @@ try:
   print(parser.parse_args())
 except:
   print("Arg error")
+  sys.exit(0)
 
 try:
   r = requests.get(link)
@@ -25,6 +26,7 @@ try:
   print("Link fetched")
 except:
   print("Link error")
+  sys.exit(0)
 
 try:
   file = open("index.html","r+")
@@ -36,6 +38,7 @@ try:
   print("File edited")
 except:
   print("File error")
+  sys.exit(0)
 
 try:
   if deploy:
@@ -53,3 +56,4 @@ try:
     os.system("git push -u "+pushstr+" master")
 except:
   print("Git/Pass error")
+  sys.exit(0)
