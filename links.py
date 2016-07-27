@@ -27,7 +27,7 @@ try:
     if not title:
         title = link
   timestr = strftime("%Y-%m-%d", gmtime())
-  new = "<br><i>" + timestr + "</i> <a href='" + link + "'>" + title + "</a>\n"
+  new = "\t\t<br><i>" + timestr + "</i> <a href='" + link + "'>" + title + "</a>\n"
   print("Link fetched")
 except:
   print("Link error")
