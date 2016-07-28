@@ -38,6 +38,7 @@ if not arguments.dry:
     file = open("index.html","r+")
     data = file.read()
     print(new)
+    # line number read and write
     file.write(new)
     file.close()
     print("File edited")
