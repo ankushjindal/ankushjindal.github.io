@@ -5,9 +5,8 @@
 - links.py python script to add interesting links and deploy
 - Note: pass.txt is git-ignored, being used by links.py and is of format - username\npassword
 
-<br>
 ToDo
 
-- Fix broken links.py (it required line number to add links in between)
-- Upate LAST UPDATED AT on touch
-- Add more links to index.html
+- [ ] Fix broken links.py (it required line number to add links in between)
+- [ ] Upate LAST UPDATED AT on touch
+- [ ] Add more links to index.html
